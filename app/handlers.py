@@ -105,7 +105,7 @@ async def start_play(callback : CallbackQuery):
         if not game:
             game = Game(user_id=callback.from_user.id, word=word, lifes=6, infinity=False, is_playing=True)
             session.add(game)
-        else:
+        else:   
             game.word = word
             game.is_playing = True
             if not game.infinity:
